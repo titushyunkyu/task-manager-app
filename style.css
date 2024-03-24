@@ -1,0 +1,216 @@
+*{
+    font-family: Georgia, serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('background images/your-selected-image.jpg'); /* Replace 'your-selected-image.jpg' with the actual filename */
+    background-size: cover; /* Adjust the size property as needed */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* This makes the image stay fixed in place */
+    background-position: center top; /* Center the background image horizontally and vertically */
+
+}
+
+.container {
+  width: min(90%, 500px);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 18%;
+  left: 15%;
+  padding: 4em 2em;
+  border-radius: 0.5em;
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.section-container {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+.btn {
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  border-width: 10;
+  border-color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+.btn-focus {
+  background-color: #cb202d;
+  color: #ffffff;
+}
+.time-btn-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+}
+#time {
+  text-align: center;
+  color: #ffffff;
+  font-size: 5em;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 2px black;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+#btn-start,
+#btn-pause {
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+#btn-reset {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 2em;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+/* end */
+.input-box{
+    background-color: transparent;
+    border-radius: 0px;
+    width: 90%;
+    font-size: x-large;
+    font-weight: 300;
+    text-align: center;
+    border-color: transparent;
+}
+
+
+.flex-parent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    height: 60%;
+    position: fixed;
+}
+ 
+.flex-child{
+    flex:1;
+    text-align: center;
+    border: 1px solid;
+    margin: 10px;
+    border-radius: 6px;
+    border-color: transparent;
+}
+#flex-child-1{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+#flex-child-2{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+#flex-child-3{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+#flex-child-4{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+#flex-child-5{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.7) 100%);
+}
+
+
+#dates {
+   text-align: center;
+   font-size: 40px;
+   padding: 0%;
+   color: white;
+   text-shadow: 3px 3px 5px black;
+    
+}
+#clock {
+    text-align: center;
+    font-size: 90px;
+    padding: 1px;
+    color: white;
+    margin-top: -15px;
+    text-shadow: 4px 4px 5px black;
+        
+}
+#clock::after {
+    content: "Have a great day!";
+    display: block; 
+    font-size: 60px; 
+    color: white; 
+    text-align: center;  
+    padding-top: 20px;
+}
+
+.input-field{
+    width: 90%;
+}
+
+.weather {
+    position: absolute;
+    font-size: 30px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color:white;
+    text-shadow: 3px 3px 5px black;
+}
+
+.location {
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in;
+    font-size: 12px;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+  
+.location:hover {
+    opacity: 1;
+}
+
+#todoList{
+    text-align: left;
+    width: 100%;
+}
+
+.todo-container{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    line-height: 0px;;
+}
+
+ul{
+    list-style-type: none;
+}
+.task-completed {
+    text-decoration: line-through;
+    display: flex;
+}
+
+.deletebtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.deletebtn i {
+    color: rgb(201, 0, 0); 
+    font-size: 16px;
+}
+
+.deletebtn:hover{
+    transform: translateY(-2px);
+}
