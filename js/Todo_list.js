@@ -1,5 +1,32 @@
 let todo = JSON.parse(localStorage.getItem("todo")) || [];
 let classNames = JSON.parse(localStorage.getItem("classNames")) || {};
+let draggedItem = null;
+
+function handleDragStart(event) {
+    event.dataTransfer.setData("text/plain", event.target.getAttribute("data-id"));
+}
+
+function handleDragOver(e) {
+    e.preventDefault();
+}
+
+function handleDrop(event, droppedOverItemId, childIndex) {
+    event.preventDefault();
+    const draggedItemId = event.dataTransfer.getData("text/plain");
+    const droppedOverItem = event.target.closest('.todo-container');
+    if (!droppedOverItem || draggedItemId === droppedOverItemId) {
+        return;
+    }
+    const draggedItemIndex = todo.findIndex(task => task.id === draggedItemId);
+    const droppedOverItemIndex = todo.findIndex(task => task.id === droppedOverItemId);
+    if (draggedItemIndex < 0 || droppedOverItemIndex < 0) {
+        return;
+    }
+    const [removed] = todo.splice(draggedItemIndex, 1);
+    todo.splice(droppedOverItemIndex, 0, removed);
+    saveToLocalStorage();
+    displayTasks();
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     initializeClassNames();
@@ -40,7 +67,7 @@ function addTask(childIndex) {
             text: newTask,
             disabled: false,
             childIndex: childIndex,
-            id: Date.now() + Math.random().toString(16) // Unique identifier for each task
+            id: Date.now() + Math.random().toString(16)
         });
         saveToLocalStorage();
         todoInput.value = "";
@@ -54,13 +81,20 @@ function displayTasks() {
         todoList.innerHTML = "";
         todo.filter(task => task.childIndex === i).forEach((item) => {
             const container = document.createElement("div");
+            container.classList.add("todo-container");
+            container.setAttribute("draggable", true);
+            container.setAttribute("data-id", item.id);
+
             container.innerHTML = `
-            <div class="todo-container">
                 <input type="checkbox" class="todo-checkbox" ${item.disabled ? "checked" : ""} onchange="toggleTask('${item.id}')">
                 <p class="${item.disabled ? "task-completed" : ""}">${item.text}</p>
-                <button class="deletebtn" onclick="deleteTask('${item.id}')">
-                <i class="fa-regular fa-trash-can"></i></button>
-            </div>`;
+                <button class="deletebtn" onclick="deleteTask('${item.id}')"><i class="fa-regular fa-trash-can"></i></button>
+            `;
+
+            container.addEventListener('dragstart', handleDragStart);
+            container.addEventListener('dragover', handleDragOver);
+            container.addEventListener('drop', function(e) { handleDrop(e, item.id, i); });
+
             todoList.appendChild(container);
         });
     }
