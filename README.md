@@ -22,3 +22,5 @@ Functionalities of this website application include:
 All information and data are contained and stored within the local storage of the browser
 
 In order to clear all data right-click on the page, select inspect-> application -> storage -> clear site data.
+
+<img src="https://titushyunkyu.com/task%20manager.png">
