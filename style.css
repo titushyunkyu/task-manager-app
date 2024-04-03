@@ -82,7 +82,7 @@ button {
   display: block;
 }
 
-/* end */
+
 .input-box{
     background-color: transparent;
     border-radius: 0px;
@@ -213,4 +213,37 @@ ul{
 
 .deletebtn:hover{
     transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 600px){
+  .container {
+    display: none;
+}
+.js-location, .js-weather{
+  font-size: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+#dates{
+  margin-top: 20%;
+  font-size: 30px;
+}
+#clock{
+  margin-bottom: 10%;
+  font-size: 70px;
+}
+#clock::after{
+  font-size: 30px;
+  margin-bottom: -10px;
+}
+.flex-parent {
+    flex-direction: column;
+    height: auto; 
+    position: relative;
+}
+
+.flex-child {
+    margin: 10px auto;
+    width: 90%; 
+}
+
 }
