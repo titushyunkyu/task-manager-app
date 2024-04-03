@@ -2,6 +2,8 @@
 
 ## An efficient task managing application created using HTML, CSS, and JavaScript.
 
+Link to web-application [here](titushyunkyu.github.io/task-manager-app/)
+
 This project was submitted to the 2024 HooHacks Hackathon hosted by the University of Virginia as part of the Education Track.
 
 Functionalities of this website application include:
