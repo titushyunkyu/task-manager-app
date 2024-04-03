@@ -20,6 +20,7 @@ Functionalities of this website application include:
     - to enable this make sure to allow location settings for website when prompted.
 * Date and Time
 * Set of wallpapers that change everytime the page is refreshed.
+* A youtube study playlist to help focus and create a study ambience.
 
 All information and data are contained and stored within the local storage of the browser
 
